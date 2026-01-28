@@ -1,5 +1,5 @@
 [project]
-name = "iflow-mcp_zippland-weather-mcp"
+name = "iflow-mcp-zippland-weather"
 version = "0.1.0"
 description = "Provides global weather forecasts and current weather conditions"
 readme = "README.md"
