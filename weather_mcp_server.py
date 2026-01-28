@@ -9,8 +9,7 @@ import os
 # Create MCP server instance
 mcp = FastMCP(
     name="WeatherForecastServer",
-    description="Provides global weather forecasts and current weather conditions",
-    version="1.0.0"
+    
 )
 
 # Define data models
@@ -202,7 +201,8 @@ def get_current_weather(location: str, api_key: Optional[str] = None, timezone_o
         return {"error": "Unable to get current weather information"}
 
 # Start server
-if __name__ == "__main__":
+def main():
+    """Main entry point for the MCP server"""
     # Check if environment variable is set and print log information
     if os.environ.get("OPENWEATHER_API_KEY"):
         print("API key found in environment variables")
@@ -212,4 +212,7 @@ if __name__ == "__main__":
         print("API key parameter required when calling tools")
     
     print("Weather Forecast MCP Server running...")
-    mcp.run(transport='stdio') 
+    mcp.run(transport='stdio')
+
+if __name__ == "__main__":
+    main()
